@@ -1,0 +1,39 @@
+
+
+
+<div class="container">
+    <h2>Nuevo Artículo (Reactive Form)</h2>
+  
+    <form [formGroup]="article" (ngSubmit)="onSubmit()">
+      <div>
+        <input formControlName="name" class="form-control" type="text" id="name" placeholder="Nombre Artículo">
+        <div *ngIf="submitted && article.controls['name'].invalid" class="text-danger">
+          <div *ngIf="article.controls['name'].errors?.['required']">El nombre del artículo es obligatorio</div>
+        </div>
+      </div>
+  
+      <div>
+        <input formControlName="price" class="form-control" type="text" id="price" placeholder="Precio Artículo">
+        <div *ngIf="submitted && article.controls['price'].invalid" class="text-danger">
+          <div *ngIf="article.controls['price'].errors?.['required']">El precio del artículo es obligatorio</div>
+          <div *ngIf="article.controls['price'].errors?.['min']">El precio debe ser al menos 0.1</div>
+        </div>
+      </div>
+  
+      <div>
+        <input formControlName="imageUrl" class="form-control" type="text" id="imageUrl" placeholder="URL Imagen">
+        <div *ngIf="submitted && article.controls['imageUrl'].invalid" class="text-danger">
+          <div *ngIf="article.controls['imageUrl'].errors?.['required']">La URL de la imagen es obligatoria</div>
+          <div *ngIf="article.controls['imageUrl'].errors?.['pattern']">La URL de la imagen no es válida</div>
+        </div>
+      </div>
+  
+      <div class="form-group form-check">
+        <input type="checkbox" formControlName="enVenta" class="form-check-input" id="enVenta">
+        <label class="form-check-label" for="enVenta">On sale</label>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+  

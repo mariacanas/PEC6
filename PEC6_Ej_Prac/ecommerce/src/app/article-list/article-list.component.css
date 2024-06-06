@@ -1,0 +1,6 @@
+
+.article-list{
+    display: flex;
+    text-align: center;
+    padding: 5px;
+}

@@ -1,0 +1,27 @@
+
+<!--Para el ejercicio 5 se ha añadido
+  [ngClass]="{'enVenta': article.isOnSale, 'noEnVenta': !article.isOnSale}"
+    Si el articulo está en venta se aplica la clase enVenta a todo el producto, si el artículo no está en venta se aplica la clase noEnVenta a todo el producto
+  [ngClass]="{'precioVenta': article.isOnSale, 'precioNoVenta': !article.isOnSale}"
+    Si el artículo está en venta al precio del producto se le aplica la clase precioVenta, si el producto no está en venta, al precio se le aplica la clase precioNoVenta
+  *ngIf="article.isOnSale" Para saber si el articulo esta en venta o no y así ocultar los botones o no
+-->
+
+
+<div class="article">
+  <div [ngClass]="{'enVenta': article.isOnSale, 'noEnVenta': !article.isOnSale}">
+    <h3>{{ article.name }}</h3>
+    <img [src]="article.imageUrl" [alt]="article.name">
+    <p>Precio</p>
+    <span [ngClass]="{'precioNoVenta': !article.isOnSale}">{{ article.price }} $</span>
+    
+    <div *ngIf="article.isOnSale">
+      <div class="botones">
+          <button (click)="decrementQuantity()" [disabled]="article.quantityInCart === 0">-</button>
+          <span>{{ article.quantityInCart }}</span>
+          <button (click)="incrementQuantity()">+</button>
+      </div>
+    </div>
+  </div>
+
+</div>

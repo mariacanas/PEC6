@@ -1,0 +1,64 @@
+
+
+.article{
+    width: auto;
+    height: 400px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.article span, p{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.botones button, .botones span{
+    padding: 5px;
+}
+
+.enVenta{
+    background-color: rgb(165, 222, 165);
+    padding: 10px;
+    height: 400px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}
+
+.noEnVenta{
+    background-color: rgb(180, 95, 95);
+    padding: 10px;
+    height: 400px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}
+
+.precioVenta{
+    color: black;
+}
+
+.precioNoVenta{
+    color: grey;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}
+
+button{
+    padding: 2px;
+    margin: 5px;
+}

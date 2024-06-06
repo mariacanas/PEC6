@@ -1,0 +1,12 @@
+
+
+<div class="container m-4">
+    <app-navbar (componenteMostrar)="mostrarComponente($event)"></app-navbar>
+    
+    <div class="articulos">
+        <app-article-list *ngIf="componenteDefecto === 'list'" class="article-container"></app-article-list>
+        <!--<app-article-template *ngIf="componenteDefecto === 'template'"></app-article-template>
+        <app-article-reactive *ngIf="componenteDefecto === 'reactive'"></app-article-reactive>-->
+    </div>
+    
+</div>
