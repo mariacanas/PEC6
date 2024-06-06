@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output  } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
 import { Article } from '../article.model';
 
 @Component({
@@ -8,15 +8,12 @@ import { Article } from '../article.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ArticleItemComponent implements OnInit {
- 
-  @Input() article: Article;
+  @Input() article!: Article; // Eliminamos la inicialización
   @Output() articleQuantityChange: EventEmitter<{ article: Article, quantity: number }> = new EventEmitter();
-  
-  constructor() {
-    this.article = { name: '', imageUrl: '', price: 0, isOnSale: false, quantityInCart: 0 }; // Valor inicial
-  }
-  ngOnInit(): void {
-  }
+
+  constructor() {}
+
+  ngOnInit(): void {}
 
   incrementQuantity(): void {
     this.article.quantityInCart++;

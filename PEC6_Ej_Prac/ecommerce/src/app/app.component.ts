@@ -5,8 +5,6 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ArticleNewTemplateComponent } from './article-new-template/article-new-template.component';
-import { ArticleNewReactiveComponent } from './article-new-reactive/article-new-reactive.component';
 import { ArticleModule } from "./article.module";
 
 @Component({

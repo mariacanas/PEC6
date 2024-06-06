@@ -1,35 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Article } from '../article.model';
+import { Observable } from 'rxjs';
+import { ArticleService } from '../article-service.service';
 
 @Component({
     selector: 'app-article-list',
     templateUrl: './article-list.component.html',
     styleUrl: './article-list.component.css'
 })
-export class ArticleListComponent {
+export class ArticleListComponent implements OnInit{
+  
+  articles$!: Observable<Article[]>;
 
-  articles: Article[] = [
-    {
-      name: 'Zapatillas',
-      imageUrl: '../assets/images/zapatillas.jpg',
-      price: 100,
-      isOnSale: true,
-      quantityInCart: 0
-    },
-    {
-      name: 'Pantalon',
-      imageUrl: './assets/images/pantalones.jpeg',
-      price: 50,
-      isOnSale: false,
-      quantityInCart: 0
-    },
-    {
-      name: 'Camiseta',
-      imageUrl: './assets/images/camiseta.jpeg',
-      price: 20,
-      isOnSale: true,
-      quantityInCart: 0
-    }];
+  constructor(private articleService: ArticleService) {}
+
+  ngOnInit(): void {
+    this.articles$ = this.articleService.getArticles();
+  }
 
     handleArticleQuantityChange(event: { article: Article, quantity: number }): void {
       // Aquí puedes manejar el evento, como enviar los datos actualizados al servidor o actualizar el estado en el componente padre

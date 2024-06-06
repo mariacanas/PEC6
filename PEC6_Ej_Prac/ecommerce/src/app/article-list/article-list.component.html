@@ -2,6 +2,9 @@
 
 
 <div class="article-list">
-    <app-article-item *ngFor="let article of articles" [article]="article" (articleQuantityChange)="handleArticleQuantityChange($event)"></app-article-item>
-  </div>
-  
+  <app-article-item
+    *ngFor="let article of articles$ | async"
+    [article]="article"
+    (articleQuantityChange)="handleArticleQuantityChange($event)">
+  </app-article-item>
+</div>
