@@ -6,6 +6,8 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ArticleService {
+
+  
   private articles: Article[] = [
     { id: 1, name: 'Zapatillas', imageUrl: './assets/images/zapatillas.jpg', price: 100, isOnSale: true, quantityInCart: 0 },
     { id: 2, name: 'Pantalon', imageUrl: './assets/images/pantalones.jpeg', price: 50, isOnSale: false, quantityInCart: 0 },

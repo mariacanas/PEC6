@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ArticleModule } from "./article.module";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
     selector: 'app-root',
@@ -13,6 +14,7 @@ import { ArticleModule } from "./article.module";
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     imports: [
+        
         RouterOutlet,
         CommonModule,
         ReactiveFormsModule,
