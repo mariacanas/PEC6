@@ -8,20 +8,19 @@
 -->
 
 
-<div class="article">
-  <div [ngClass]="{'enVenta': article.isOnSale, 'noEnVenta': !article.isOnSale}">
-    <h3>{{ article.name }}</h3>
-    <img [src]="article.imageUrl" [alt]="article.name">
-    <p>Precio</p>
-    <span [ngClass]="{'precioNoVenta': !article.isOnSale}">{{ article.price }} $</span>
-    
-    <div *ngIf="article.isOnSale">
-      <div class="botones">
-          <button (click)="decrementQuantity()" [disabled]="article.quantityInCart === 0">-</button>
-          <span>{{ article.quantityInCart }}</span>
-          <button (click)="incrementQuantity()">+</button>
-      </div>
+<div class="article" [ngClass]="{'enVenta': article.isOnSale, 'noEnVenta': !article.isOnSale}">
+  <h3>{{ article.name }}</h3>
+  <img [src]="article.imageUrl | defaultImage" [alt]="article.name">
+  <p>Precio</p>
+  <span [ngClass]="{'precioVenta': article.isOnSale, 'precioNoVenta': !article.isOnSale}">
+    {{ article.price | currency:'EUR':'symbol':'1.2-2' }}
+  </span>
+  
+  <div *ngIf="article.isOnSale">
+    <div class="botones">
+      <button (click)="decrementQuantity()" [disabled]="article.quantityInCart === 0">-</button>
+      <span>{{ article.quantityInCart }}</span>
+      <button (click)="incrementQuantity()">+</button>
     </div>
   </div>
-
 </div>

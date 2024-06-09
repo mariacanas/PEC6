@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArticleNewReactiveComponent } from './article-new-reactive/article-new-reactive.component';
 import { ArticleNewTemplateComponent } from './article-new-template/article-new-template.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DefaultImagePipe } from './default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { HttpClientModule } from '@angular/common/http';
     ArticleNewTemplateComponent
   ],
   imports: [
-    CommonModule,ReactiveFormsModule, FormsModule
+    CommonModule,ReactiveFormsModule, FormsModule,DefaultImagePipe  
   ],
   exports: [
     ArticleItemComponent,
     ArticleListComponent,
     ArticleNewReactiveComponent,
-    ArticleNewTemplateComponent
+    ArticleNewTemplateComponent,
+    DefaultImagePipe
   ]
 })
 export class ArticleModule { }
