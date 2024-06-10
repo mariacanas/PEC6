@@ -13,17 +13,20 @@ import { DefaultImagePipe } from './default-image.pipe';
     ArticleItemComponent,
     ArticleListComponent,
     ArticleNewReactiveComponent,
-    ArticleNewTemplateComponent
+    ArticleNewTemplateComponent  
   ],
   imports: [
-    CommonModule,ReactiveFormsModule, FormsModule,DefaultImagePipe  
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    DefaultImagePipe  
   ],
   exports: [
     ArticleItemComponent,
     ArticleListComponent,
     ArticleNewReactiveComponent,
-    ArticleNewTemplateComponent,
-    DefaultImagePipe
+    ArticleNewTemplateComponent
   ]
 })
 export class ArticleModule { }
